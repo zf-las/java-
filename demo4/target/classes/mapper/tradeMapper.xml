@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.tradeDao">
+    <select id="getBalance" parameterType="int" resultType="int">
+        select balance from wallet
+        where userId=#{userId}
+    </select>
+    <update id="costM" parameterType="com.example.demo.pojo.wallet" >
+        update wallet
+        set balance=#{balance}
+        where userId=#{userId}
+    </update>
+    <select id="getTradeRecode" parameterType="int" resultType="com.example.demo.pojo.trade">
+        select *
+        from trade
+        where userId=#{userId}
+    </select>
+</mapper>
